@@ -31,13 +31,16 @@ make install
 cd ..
 rm -rf ruby-1.9.2-p290*
 
-# Install RubyGems 1.7.2
-wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.6.tgz
-tar xzf rubygems-1.8.6.tgz
-cd rubygems-1.8.6
-/opt/ruby/bin/ruby setup.rb
-cd ..
-rm -rf rubygems-1.8.6*
+# Updating rubygem to the latest version. Otherwise it install gem version 1.3.7 by default
+gem update --system
+
+# Install RubyGems 1.8.8
+# wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.8.tgz
+# tar xzf rubygems-1.8.8.tgz
+# cd rubygems-1.8.8
+# /opt/ruby/bin/ruby setup.rb
+# cd ..
+# rm -rf rubygems-1.8.8*
 
 # Installing chef & Puppet
 /opt/ruby/bin/gem install chef --no-ri --no-rdoc
